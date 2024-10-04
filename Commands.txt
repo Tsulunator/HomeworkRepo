@@ -1,0 +1,10 @@
+ssh-keygen -t rsa 4096 -C "Email"
+eval "$(shh-agent -s)
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+git clone git@github.com:Tsulunator/HomeworkRepo.git
+cd HomeworkRepo
+git add hello.txt
+echo "Hello World" > hello.txt
+git commit -m "hello.txt"
+git push origin main.
